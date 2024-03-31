@@ -1,0 +1,25 @@
+CREATE TABLE items (
+  id INTEGER PRIMARY KEY NOT NULL,
+  name TEXT NOT NULL,
+  description TEXT NOT NULL,
+  done INTEGER NOT NULL
+);
+
+INSERT INTO items(id, name, description, done)
+VALUES
+(1, "abc", "qwerty", 0),
+(2, "test", "opis", 1);
+
+selectAll:
+SELECT *
+FROM items;
+
+insert:
+INSERT INTO items(id, name, description, done)
+VALUES (?, ?, ?, ?);
+
+delete:
+DELETE FROM items WHERE id = ?;
+
+mark:
+UPDATE items SET done = ? WHERE id = ?;
